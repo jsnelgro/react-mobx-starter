@@ -1,5 +1,6 @@
 /* Global Actions */
 import store from './store.js'
+import Thing from './models/Thing.js'
 import { action } from 'mobx'
 
 const randomTitle = action(() => {
@@ -10,4 +11,8 @@ const setTitle = action((new_title) => {
   store.title = new_title
 })
 
-export default {randomTitle, setTitle}
+const addThing = action(() => {
+  store.things.push(new Thing())
+})
+
+export default {randomTitle, setTitle, addThing}

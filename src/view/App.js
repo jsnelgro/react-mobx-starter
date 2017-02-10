@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
+import Thing from './Thing';
 import styles from './App.css';
 import actions from 'state/actions';
 
@@ -11,7 +12,18 @@ class App extends Component {
     return (
       <div className={styles.App}>
         <h1>{store.title}</h1>
-        <button onClick={actions.randomTitle}>click me</button>
+        <button onClick={actions.addThing}>click me</button>
+        <ul>
+        {
+        store.things.map((thing, i) => {
+          return (
+          <li key={i}>
+            <Thing model={thing} />
+          </li>
+          )
+        })
+        }
+      </ul>
       </div>
     );
   }
