@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './view/App';
-import Store from './state/Store';
+import App from 'view/App';
+import store from 'state/store';
 import './index.css';
 
-const store = new Store()
 window.store = store
 
 ReactDOM.render(
